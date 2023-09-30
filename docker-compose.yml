@@ -6,13 +6,15 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=Wo123456
     volumes:
-      - /Users/sufuwang/Downloads/Code/universe/data/mysql:/var/lib/mysql
+      - /home/lighthouse/data/mysql:/var/lib/mysql
+      # - /Users/sufuwang/Downloads/Code/universe/data/mysql:/var/lib/mysql
   redis-container:
     image: redis
     ports:
       - '6379:6379'
     volumes:
-      - /Users/sufuwang/Downloads/Code/universe/data/redis:/data
+      - /home/lighthouse/data/universe/data/redis:/data
+      # - /Users/sufuwang/Downloads/Code/universe/data/redis:/data
   universe:
     build:
       context: ./submodules/universe
