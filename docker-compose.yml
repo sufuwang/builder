@@ -1,0 +1,37 @@
+services:
+  mysql-container:
+    image: mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=Wo123456
+    volumes:
+      - /Users/sufuwang/Downloads/Code/universe/data/mysql:/var/lib/mysql
+  redis-container:
+    image: redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - /Users/sufuwang/Downloads/Code/universe/data/redis:/data
+  universe:
+    build:
+      context: ./submodules/universe
+      dockerfile: ./Dockerfile
+    depends_on:
+      - mysql-container
+      - redis-container
+    ports:
+      - '3000:3000'
+  read-life:
+    build:
+      context: ./submodules/readLife
+      dockerfile: ./Dockerfile
+    ports:
+      - '3001:80'
+  read-me:
+    build:
+      context: ./submodules/readMe
+      dockerfile: ./Dockerfile
+    ports:
+      - '3002:80'
+  

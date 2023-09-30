@@ -1,0 +1,9 @@
+[submodule "submodules/universe"]
+	path = submodules/universe
+	url = git@github.com:sufuwang/universe.git
+[submodule "submodules/readLife"]
+	path = submodules/readLife
+	url = git@github.com:sufuwang/readLife.git
+[submodule "submodules/readMe"]
+	path = submodules/readMe
+	url = git@github.com:sufuwang/readMe.git
